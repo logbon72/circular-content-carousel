@@ -28,6 +28,8 @@
 					});
 				}
 				
+				$el.trigger('carousel:scroll', [{'dir': dir, wrapper: $wrapper, 'opts': opts}]);
+				
 				// animate the left of each item
 				// the calculations are dependent on dir and on the cache.expanded value
 				$wrapper.find('div.ca-item').each(function(i) {
@@ -190,25 +192,7 @@
 								left		: i * cache.itemW + 'px'
 							});
 						});
-						
-						// click to open the item(s)
-						$el.find('a.ca-more').live('click.contentcarousel', function( event ) {
-							if( cache.isAnimating ) return false;
-							cache.isAnimating	= true;
-							$(this).hide();
-							var $item	= $(this).closest('div.ca-item');
-							aux.openItem( $wrapper, $item, settings, cache );
-							return false;
-						});
-						
-						// click to close the item(s)
-						$el.find('a.ca-close').live('click.contentcarousel', function( event ) {
-							if( cache.isAnimating ) return false;
-							cache.isAnimating	= true;
-							var $item	= $(this).closest('div.ca-item');
-							aux.closeItems( $wrapper, $item, settings, cache );
-							return false;
-						});
+												
 						
 						// navigate left
 						$navPrev.bind('click.contentcarousel', function( event ) {
@@ -248,7 +232,12 @@
 		if ( methods[method] ) {
 			return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
 		} else if ( typeof method === 'object' || ! method ) {
+			try{
+			console.log(typeof method);
 			return methods.init.apply( this, arguments );
+			}catch(e){
+				console.error(e);
+			}
 		} else {
 			$.error( 'Method ' +  method + ' does not exist on jQuery.contentcarousel' );
 		}
