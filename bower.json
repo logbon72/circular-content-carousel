@@ -11,13 +11,5 @@
     "jquery-mousewheel": ">=3.0.4",
     "jquery": ">=1.7.0"
   },
-  "devDependencies": {},
-  "homepage": "http://tympanus.net/Development/CircularContentCarousel/",
-  "_release": "1.0.0",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.0",
-    "commit": "e57a68dd3221033ad0844c26247bed0c17207b08"
-  },
-  "_source": "git://github.com/logbon72/circular-content-carousel.git"
+  "devDependencies": {}
 }
