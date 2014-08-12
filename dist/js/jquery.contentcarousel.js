@@ -232,12 +232,7 @@
 		if ( methods[method] ) {
 			return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
 		} else if ( typeof method === 'object' || ! method ) {
-			try{
-			console.log(typeof method);
 			return methods.init.apply( this, arguments );
-			}catch(e){
-				console.error(e);
-			}
 		} else {
 			$.error( 'Method ' +  method + ' does not exist on jQuery.contentcarousel' );
 		}

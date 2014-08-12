@@ -1,6 +1,6 @@
 {
   "name": "circular-content-carousel",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": ["dist/css/style.css", "dist/js/jquery.contentcarousel.js"],
   "ignore": [
     ".gitignore",
